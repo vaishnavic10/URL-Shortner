@@ -1,20 +1,11 @@
-const express = require("express");
+require("dotenv").config();
 const mongoose = require("mongoose");
-const urlRoutes = require("./routes/url");
 
-const app = express();
-app.use(express.json());
+const mongoURI = process.env.MONGO_URI;
 
-mongoose.connect("mongodb+srv://vaishnavichopade2004:vaivi1977@cluster0.ybffv.mongodb.net/", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => console.log("MongoDB connected"))
-.catch(err => console.error("MongoDB connection error:", err));
+mongoose.connect(mongoURI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log(err));
 
-// Routes
-app.use("/api/url", urlRoutes);
-
-// Server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
