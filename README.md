@@ -19,7 +19,7 @@
 | Component      | Technology                   |
 |----------------|-----------------------------|
 | Backend        | Node.js, Express.js          |
-| Database       | (Optional) MongoDB / JSON    |
+| Database       |  MongoDB                    |
 | Language       | JavaScript                  |
 | URL Handling   | Node.js built-in libraries  |
 
